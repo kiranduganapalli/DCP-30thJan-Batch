@@ -563,7 +563,7 @@ DAY-4
 			
 			git status
 		
-			git init ==> sed to initilize a fresh local git repository & create a default master branch
+			git init ==> used to initilize a fresh local git repository & create a default master branch
 	
 			HEAD ptr ==> always points to the lastest commit of the current branch.	
 
@@ -622,3 +622,230 @@ DAY-4
   excellent -- exxxxxxxxxxxxxxxxxxxxxxxxxcellent = 1   
   good   0
   average -1
+
+#########
+ DAY - 5 
+##########
+
+		working directory	<--->		Staging Area	<--->	Local Repo 			<-------->		Remote Repository
+		
+		file1.txt			git add 					commit	file.txt					push 
+		file1.txt						file1.txt
+		file1.txt
+		file1.txt
+		file1.txt
+		file1.txt
+	
+	
+	Incremental Changes :::
+	
+		Remote repo : 10files + 2 more files
+		
+			Clone : 
+			fetch/pull : 
+	
+	
+	git status ???
+		Working Tree is Clean or NOT!!!!
+	git log ???
+		commit Id , HEAD, Identity, date, commit_msg 
+	
+	
+	git add . 
+	git add <file_name>
+	git add *.md
+	
+	git log -2
+	git log --oneline 
+	git log --stat
+	
+	GIT Ignore!!!!!!
+	
+		DVCS -- GIT 
+		
+		Used to version control the source codes!!!!
+					Working Dir.							Staging				Local Repo 			===> 	Remote repo.
+					
+		Folder :	Java-Web-appln-Project	
+							index.java 
+							signin.java					====> read userinput, process, update the database.
+							validate.java 
+							unittestcase.md
+							readme.doc 
+							javaapp.war							
+							credentials
+							secrets 
+							
+	
+Summary :::
+
+	git log 
+	git status
+	git diff
+	.gitignore
+	
+  500  git --version
+  501  cd d:
+  502  mkdir Jan30Batch
+  503  cd Jan30Batch/
+  504  ls
+  505  mkdir repo1
+  506  cd repo1/
+  507  clear
+  508  git init
+  509  ls
+  510  ls -a
+  511  echo "rec1" >> file1.txt
+  512  git status
+  513  git add file1.txt
+  514  git status
+  515  git commit -m "CM1"
+  516  git status
+  517  git log
+  518  clear
+  519  ls
+  520  cd ..
+  521  ls
+  522  mkdir testrepo1
+  523  cd testrepo1/
+  524  ls
+  525  clear
+  526  ls -a
+  527  git init
+  528  ls -a
+  529  echo "rec1" >> file1.txt
+  530  git status
+  531  git add file1.txt
+  532  git commit -m "Initial Commit"
+  533  clear
+  534  git status
+  535  git log
+  536  git status
+  537  ls
+  538  git file2.txt
+  539  git --help
+  540  clear
+  541  ls
+  542  echo "rec1" >> file2.txt
+  543  git add file2.txt
+  544  git commit -m "CM1"
+  545  git status
+  546  git log
+  547  clear
+  548  git status
+  549  cd ..
+  550  mkddir testrepo2
+  551  mkdir testrepo2
+  552  cd testrepo2
+  553  git status
+  554  ls -a
+  555  echo "rec1" >> file1.txt
+  556  git status
+  557  git add file1.txt
+  558  git init
+  559  git status
+  560  git add file1.txt
+  561  git commit -m "CM1"
+  562  git status
+  563  clear
+  564  echo "rec1" >> f1.txt
+  565  echo "rec1" >> f2.txt
+  566  echo "rec1" >> f3.txt
+  567  git status
+  568  git add .
+  569  git status
+  570  git commit -m "CM2"
+  571  git status
+  572  echo "rec1" >> s1.java
+  573  echo "rec1" >> s2.java
+  574  echo "rec1" >> s2.md
+  575  echo "rec1" >> s3.md
+  576  git status
+  577  git add *.java
+  578  git status
+  579  git add *.md
+  580  git status
+  581  git commit -m "CM3"
+  582  git status
+  583  git log
+  584  git log --oneline
+  585  git log --stat
+  586  git log --oneline
+  587  git log -2
+  588  clear
+  589  git log --oneline -2
+  590  git log --stat -2
+  591  git log --stat
+  592  git log e6aec68
+  593  clear
+  594  git log --oneline
+  595  git log --stat 0015d69
+  596  clear
+  597  git status
+  598  ls
+  599  cat s1.java
+  600  echo "rec2" >> s1.java
+  601  echo "rec3" >> s1.java
+  602  cat s1.java
+  603  clear
+  604  cat s1.java
+  605  git status
+  606  git diff
+  607  git add .
+  608  git status
+  609  git diff
+  610  git diff --cached
+  611  git diff --name-only --cached
+  612  clear
+  613  git diff --cached
+  614  git diff --name-only --cached
+  615  git status
+  616  git commit -m "CM4"
+  617  clear
+  618  cat s1.java
+  619  git status
+  620  echo "record4" >> s1.java
+  621  git status
+  622  git diff
+  623  git add .
+  624  git diff --cached
+  625  git diff --name-only --cached
+  626  clear
+  627  git status
+  628  git commit -m "CM5"
+  629  git status
+  630  git log --oneline
+  631  git log --oneline -2
+  632  git diff b6c480b 040c808
+  633  git diff HEAD
+  634  clear
+  635  git log --oneline
+  636  cd ..
+  637  mkdir testrepo3
+  638  cd testrepo3
+  639  clear
+  640  git init
+  641  vi .gitignore
+  642  cat .gitignore
+  643  git status
+  644  git add .
+  645  git commit -m "Created .GITIGNORE FILE"
+  646  git status
+  647  clear
+  648  ls
+  649  ls -a
+  650  echo "afdasdfsdf" > s1.java
+  651  echo "afdasdfsdf" > s2.java
+  652  echo "afdasdfsdf" > c1.txt
+  653  echo "afdasdfsdf" > c2.txt
+  654  echo "afdasdfsdf" > a1.doc
+  655  echo "afdasdfsdf" > q1.md
+  656  echo "afdasdfsdf" > sample1.txt
+  657  ls
+  658  cat .gitignore
+  659  git add .
+  660  git status
+  661  git commit -m "CM1"
+  662  history
+	
+	
