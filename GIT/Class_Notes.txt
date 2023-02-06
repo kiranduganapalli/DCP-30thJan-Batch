@@ -848,4 +848,369 @@ Summary :::
   661  git commit -m "CM1"
   662  history
 	
+@@@@@@@
+DAY-6
+@@@@@@@
 	
+		Misc. GIT Commands
+		Branching Techniques
+		Remote Repositories!!!!
+		
+	
+	Misc. GIT Commands
+	
+		git reset
+		git revert 
+		commit 
+		
+		
+		Working Dir.  ---> 	staging 		---> local repo. 
+		
+	Developers ---> Create src code, build, unit testing ===> pushed into remote repo.
+	
+	
+	git rm --cached file2.txt		jus remove from Index/Staging Area	
+	git rm -f file2.txt				permanently remove from working Dir. 
+		
+	git reset :::   local repo level 
+	
+		--soft   --> Just go back to prev. commit point, retains the changes in staging area & Working Dir.
+		--mixed	 --> Just go back to prev. commit point, changes will be removed from staging area, but will be thr in working Dir.
+		--hard	 --> Just go back to prev. commit point, permanently remove the changes from stagin area & Working Dir.
+		
+	reset :: will jus remove the commit id
+	
+	git commit ???
+	- create new commit id:::
+	
+	Commit Message -- shd be relevant to the changes. 
+	CR#-desp.
+	
+	
+	GIT Branches :::
+	
+		Purpose of using git ???
+			Track the changes
+			Version control the changes
+			
+			Perform Parallel Development
+		
+	Parallel Development :::
+	
+	
+	Developer ::
+		src_code_repo 					-- 		Local Machine 
+			index.jsp					(Current CR)
+			email_Validation.java
+
+
+	CR 
+	Bug fixing 
+	
+	GIT Branches ::: GIT Branching Strategies ::::
+	
+		Master Branch					Default -- Prod copy
+			src_code_repo 					-- 		Local Machine 
+				index.jsp					
+				email_Validation.java
+				
+		Master Branch
+		
+			Feature_Branch1
+			Feature_Branch2
+			Feature_Branch3
+			
+			
+		Master Branch											===> 			Remote Repository
+
+			Release_Branch 			-- > 
+			
+				Integration_Branch 	(TEAM1) index.jsp
+					Dev_Branch1
+						Feature_Branch1
+						Feature_Branch2
+						Feature_Branch3	
+
+					Dev_Branch2
+						Feature_Branch1
+						Feature_Branch2
+						Feature_Branch3
+ 
+				Integration_Branch 	(TEAM2) index.jsp			Review  (Dev_Branch1 + Dev_Branch2) testing 
+					Dev_Branch1
+						Feature_Branch1 index.jsp  build testing 
+						Feature_Branch2
+						Feature_Branch3	
+
+					Dev_Branch2			-- Review
+						Feature_Branch1	index.jsp  build testing 
+						Feature_Branch2
+						Feature_Branch3
+						
+		Master Branch					 index.jsp
+			Dev_Branch		
+				Feature_Branch1   index.jsp  build testing 
+				Feature_Branch2
+				Feature_Branch3
+				
+
+GIT Branching Demo :::
+
+		Master_branch 
+			1 -- 50 users 
+			feature1 ---- 50 
+		
+	
+		Master Branch (prod)	(v1.0)				 index.jsp			released to prod. envi. (deployment window) (4 - 6)
+			hotfix branch (v1.0)
+		
+		
+			Dev_Branch		
+				Feature_Branch1   index.jsp  build testing 
+				Feature_Branch2
+				Feature_Branch3
+				
+		Deploy to prod :::
+			try to fix it within the deployment window 
+			revert
+			
+	
+	Git Branch :
+			
+			master 				prod file2.txt 
+				feature
+				
+			merge 
+			
+			git merge feature1 		===> command shd be executed only from the target branch.
+			
+			Master :
+				f1	-- dev1   file2.txt 
+				
+				f2	-- dev2   file2.txt  
+				
+				
+	
+	folder1 
+		file1.txt  --- copied the file 
+		
+	folder2   - try to paste in another folder 
+		file1.txt
+		
+	Merge Conflict in get occurs -- when we try to update the same file in the same rec. 
+	
+		how to fix the merge conflict ??
+		
+			- identify the file - which caused the conflict .
+			- review the file content
+			- make appro. changes 
+			- add and commit  the new changes 
+			
+	
+	incremental changes. 
+	
+	master -- file1.txt 100 records -- 50kb ===> 
+	
+		feature1 --> file1.txt 100 records -- 50kb	===> 0kb
+			+50 records ===> 150 records -- 75kb	===> 25kb
+		
+	merge feature1 to master ==> 
+	
+	
+Summary :::
+
+		Till merge conflicts!
+  504  cd Jan30Batch/
+  505  ls
+  506  cd mkdir srepo1
+  507  mkdir srepo1
+  508  cd srepo1/
+  509  clear
+  510  git init
+  511  echo "rec1" >> file1.txt
+  512  git add .
+  513  git commit -m "CM1"
+  514  echo "rec1" >> file2.txt
+  515  git status
+  516  git add .
+  517  ls
+  518  git status
+  519  git rm --cached file2.txt
+  520  git status
+  521  git add .
+  522  git status
+  523  git rm -f file2.txt
+  524  git status
+  525  ls
+  526  c
+  527  clear
+  528  git status
+  529  cd ..
+  530  mkdir srepo2
+  531  cd srepo2/
+  532  clear
+  533  git init
+  534  echo "rec1" >> file1.txt
+  535  git add .
+  536  git commit -m "CM1"
+  537  git log
+  538  echo "rec1" >> file2.txt
+  539  git add .
+  540  git commit -m "CM2"
+  541  echo "rec1" >> file3.txt
+  542  git add .
+  543  git commit -m "CM3"
+  544  echo "rec1" >> file4.txt
+  545  git add .
+  546  git commit -m "CM4"
+  547  clear
+  548  git log --oneline
+  549  ls
+  550  ls
+  551  clear
+  552  git log --oneline
+  553  git status
+  554  ls
+  555  git ls-files
+  556  git reset --soft f818113
+  557  git log --oneline
+  558  git status
+  559  git ls-files
+  560  ls
+  561  git status
+  562  git commit -m "CM4.1"
+  563  clear
+  564  git status
+  565  git log --oneline
+  566  ls
+  567  git ls-files
+  568  git reset --mixed f818113
+  569  git log --oneline
+  570  git status
+  571  ls
+  572  git ls-files
+  573  git add .
+  574  git commit -m "CM4.2"
+  575  git status
+  576  git log --oneline
+  577  ls
+  578  git ls-files
+  579  git reset --hard f818113
+  580  git log --oneline
+  581  git status
+  582  git ls-files
+  583  ls
+  584  clear
+  585  git log --oneline
+  586  git status
+  587  echo "rec1" >> file4.txt
+  588  git add .
+  589  git commit -m "adfasdfSDFSDF"
+  590  git log --oneline
+  591  git commit -m "CM4"
+  592  git status
+  593  git commit --amend -m "CM4"
+  594  git log --oneline
+  595  ls
+  596  ls
+  597  cd ..
+  598  mkdir srepo3
+  599  cd srepo3
+  600  git init
+  601  c
+  602  c
+  603  clear
+  604  ls
+  605  git branch
+  606  git branch --list
+  607  clear
+  608  git branch
+  609  git status
+  610  echo "rec1" >> file1.txt
+  611  git add .
+  612  git commit "CM1 from master"
+  613  git commit -m "CM1 from master"
+  614  git branch
+  615  git switch -c feature1
+  616  git branch
+  617  ls
+  618  clear
+  619  ls
+  620  cat file1.txt
+  621  echo "rec1" >> file2.txt
+  622  echo "rec2" >> file2.txt
+  623  ls
+  624  git status
+  625  git add .
+  626  git commit -m "CM1 from feature1"
+  627  git status
+  628  clear
+  629  ls
+  630  git switch master
+  631  ls
+  632  git merge feature1
+  633  ls
+  634  git log --oneline
+  635  git branch -d feature1
+  636  git branch
+  637  ls
+  638  clear
+  639  cat file2.txt
+  640  clear
+  641  git switch -c feature1
+  642  git log
+  643  git log --oneline
+  644  ls
+  645  echo "rec1" >> file2.txt
+  646  git add .
+  647  git commit -m "CM2 from feature1"
+  648  git log --oneline
+  649  ls
+  650  cat file2.txt
+  651  git switch master
+  652  git log --oneline
+  653  git merge feature1
+  654  git log --oneline
+  655  ls
+  656  clear
+  657  git branch
+  658  git log --oneline
+  659  git switch feature2
+  660  git switch -c feature2
+  661  git log
+  662  clear
+  663  ls
+  664  vi file2.txt
+  665  cat file2.txt
+  666  git add .
+  667  git commit -m "CM1 from feature2"
+  668  git log --oneline
+  669  git switch master
+  670  ls
+  671  cat file2.txt
+  672  git switch feature1
+  673  cat file2.txt
+  674  vi file2.txt
+  675  cat file2.txt
+  676  git switch master
+  677  git switch feature1
+  678  git add .
+  679  git status
+  680  git commit -m "CM3 from feature1"
+  681  git switch master
+  682  clear
+  683  git branch
+  684  cat file2.txt
+  685  git merge feature1
+  686  cat file2.txt
+  687  git merge feature2
+  688  cat file2.txt
+  689  vi file2.txt
+  690  cat file2.txt
+  691  git add .
+  692  git commit -m "Merge from feature1 and feature2"
+  693  git log --oneline
+  694  cat file2.txt
+  695  history
+
+
