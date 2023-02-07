@@ -91,3 +91,118 @@ git diff --name-only --cached
 
 Scenario3: Track the changes between two commits 
 git diff <commit1-sha> <commit2-sha> 
+
+
+Commit Amend :
+
+git commit --amend -m "New CM7"   	# To change the commit msg.
+git show <commit_id> 
+
+Working on Branches :
+
+The master branch is a default branch in Git. It is instantiated when first commit made on the project.
+
+git branch  <branch name>  
+git branch --list  
+git branch -d <branch name>  
+git checkout <branch name>  
+git branch -m <old branch name><new branch name>  
+git merge <branch name>
+git switch
+
+Merge
+	Merge-Conflict
+	Resolve Merge-Conflict
+rebase
+
+squash
+
+
+===================================================================================================================	
+	
+scenario 11: Understanding merge & rebase ( merge & rebase both are used to combine the changes from one branch into another )
+
+lets assume we have two branches master & feature with some commits we want to merge one into another
+
+	assuming master has two commits c1 & c2, then we created a new branch feature, so here the feature is created with c1 & c2 and we call c2 as the base for feature branch now.
+
+	master            c1   c2
+	feature           c1   c2
+
+	assume we started working on feature branch and create some commits f1 & f2 - mean while someone else also started working on master branch and created a commit c3. it will look like below now
+
+	master            c1   c2  c3
+	feature                c2  f1  f2
+	
+so what are the differnt ways to merge these two branches & what would be the results. lets try to understand
+
+case1: merge changes with -- git merge
+
+	git merge feature ( we should be in master branch while running this command ). once we issue this is how the git log history looks like at master 
+	
+	master            c1   c2  c3  f1  f2  mc
+	feature           c1   c2  f1  f2
+	
+	so this would add / forward all commit id from feature branch into master along with a brand new commit id called merge commit (mc above)
+	this mc does not have any significance in history making some ambiguity those who look at the commit history. 
+
+case 2: merge changes using -- git rebase
+
+		dev      c1  c2   c3
+		feature 	    c2   f1   f2
+	
+		swith to feature branch and do "git rebase master", which would result as below 
+		
+		dev       c1  c2  c3 
+		feature      c1  c2  c3  f1  f2  ( it changes feature branch base to match last commit id of master )
+		
+		switch back to master (git checkout master) & do "git rebase/merge feature" , which would result as below.
+		
+		dev       c1  c2  c3  f1  f2
+		feature      c1  c2  c3  f1  f2 
+
+		dev       c1  c2  c3  f1  f2
+		feature      c1  c2  c3  f1  f2 
+
+
+		
+		making both branches with clean history of commits. 
+		
+case 3: merge changes with -- git merge --squash /// git merge feature (ff)
+
+	git merge --squash feature ( we should be in master branch while running this command ). once we issue this is how the git log history looks like at master 
+
+git merge feature (ff)
+    master            c1   c2  c3  f1  f2 mc
+	feature           c1   c2  f1  f2 
+
+git rebase master
+		master       c1  c2  c3  f1  f2
+		feature      c1  c2  c3  f1  f2 
+		
+git merge --squash feature
+git commit -m "combined all commits from feature"
+
+    master            c1   c2  c3  mc
+	feature           c1   c2  f1  f2 
+		
+	this case it will combine all the commit ids from feature branch & creates a brand new commit id at master with all changes combined from feature.
+	
+
+squash 
+before merge ---> git rebase -i HEAD~4
+or while merging ---> git merge --squash feature
+		
+		
+git cherry-pick <commit id> # from target branch.
+
+
+consider :::
+
+feature1 ===> cm1,2,3,4,5,6,7
+git log --oneline
+
+on master branch :
+
+git merge feature1 
+git cherry-pick 7043a97
