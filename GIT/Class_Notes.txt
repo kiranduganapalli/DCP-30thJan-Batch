@@ -1168,8 +1168,8 @@ DAY-7
 	Git Cherry Pick ===>
 	
 		used to pick only the required commits to merge into target branch!
-  
-  779  mkdir arepo1
+	
+	  779  mkdir arepo1
   780  cd arepo1/
   781  git init
   782  echo "rec1" >> f1.txt
@@ -1325,3 +1325,165 @@ DAY-7
   932  ls
   933  git log --oneline
   934  history
+
+
+@@@@@@@@
+DAY-8
+@@@@@@@@
+
+		Git Revert 
+		stashing
+		Remote Repos 
+		Jenkins 
+
+		Git reset ::: cm1,...........,10  ==> undo last 5 commit, undo last commit
+		
+		git revert !!!!
+		
+		
+		Users ---> owner of the repo. 
+		
+		
+		
+		Reset 	--> 
+		
+		revert 	--> if you want to safely undo the changes in a shared repos.
+		
+		Prod_deployment  ==> 4hrs. - deployment window -- Prod level testing 
+		
+				--> Within the available 4 hrs, we shd try to fix the issue. --> hotfix branch 
+						(or)
+				--> rollback the changes/ Undo the Changes.
+						git revert 
+
+
+		
+		git Stash :::
+		
+			Developer1 ---> 
+				src_code_repo (master)
+						feature1 -------> create files, stage ...
+						
+						new_feature2
+
+
+			Save the uncommitted Changes to a Temporary location. 
+
+Stash current work:
+git stash
+
+Saving stashes with a message: 
+git stash save "<Stashing Message>"
+
+Check the stored stashes: 
+git stash list
+
+Re-apply the changes that you just stashed 
+git stash apply
+
+Track the stashes and their changes: 
+git stash show
+
+Re-apply the previous commits: 
+git stash pop
+
+Delete a most recent stash from the queue: 
+git stash drop
+
+Delete all the available stashes at once: 
+git stash clear
+
+Stash work on a separate branch: 
+git stash branch <branch name>
+
+
+		Git Remote Repository :::
+				
+			github - remote repo
+			az repo / aws code commit / gitlab / bitbucket....
+			
+		
+		git remote 
+		
+		git clone 	===> to copy remote repo to local machine 
+		
+		Fork 		===> to copy remote repo within remote server 
+		
+		git fetch ==> 
+			used to check for any incremental changes happened in remote repo and bring that changes to local repo. But it will never update the working dir.
+		
+		git pull ==> fetch + merge 
+			used to check for any incremental changes happened in remote repo and bring that changes to local repo in current branch and working dir.
+			
+		
+		master local 					master remote  10 commits 
+		
+		
+		
+		switch temp_remote_master
+		git pull 10 commits 
+		
+		
+		
+		
+		
+		git push 
+		
+			clone remote repo.
+			linking the repo.
+			
+			
+		Pull Request ::: --> 
+		
+		To push changes to remote repo :::
+		 we have to provide github login ID & github token
+		
+		git remote -v   == list the remote repos linked to the local repo.
+		 
+		git remote add	== Used to link the remote repos to the local repo. 
+		
+		git remote remove	== Used to remote the remote repos linked to the local repo. 
+		
+Summary :
+			GIT Local & Remote Repo Commands
+			
+Jenkins :::::
+
+		GIT ===> Dev_Environment
+		
+		Create src_code --> push the changes to remote repo --> build --> Artifacts --> Deploy to Test / PROD
+		
+		Automated Scripts
+		
+		Jenkins --> Is a Build Orchestration Tool, help to automated CI/CD.
+		
+		Jenkins --> Open source tool
+		
+		Jenkins Jobs/Project 
+		
+		Jenkins is a Master / Slave Architecture
+			To distribute the workload/builds
+		
+		DEV_Team :: Java, .Net, python, NodeJs, Angular.....
+		
+		Jenkins_Master
+		
+		Jenkins Master :	===> Just acts like Scheduler.
+			Jenkins_Slave1		- Java Appln.   -- Maven -- build(Compile the src_code & Create artifacts)
+			Jenkins_Slave2		- Python		-- py
+			Jenkins_Slave3		- .Net 			-- .net runtime
+			Jenkins_Slave4 
+			Jenkins_Slave5
+			
+		Servers :::
+		
+			Launch EC2 Instances -- VM
+			Jenkins_Master	Linux VM 
+				Slave 		Linux VM
+				
+			Create Jenkins Jobs/Project/Pipelines to perform CI/CD
+			
+		Jenkins servers are owned by DevOps Team.
+			Developer are just user.
+			
+	
