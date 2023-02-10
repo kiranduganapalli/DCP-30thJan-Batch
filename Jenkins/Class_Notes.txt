@@ -1423,15 +1423,10 @@ git stash branch <branch name>
 		switch temp_remote_master
 		git pull 10 commits 
 		
-		
-		
-		
-		
 		git push 
 		
 			clone remote repo.
 			linking the repo.
-			
 			
 		Pull Request ::: --> 
 		
@@ -1446,193 +1441,6 @@ git stash branch <branch name>
 		
 Summary :
 			GIT Local & Remote Repo Commands
-  942  cd Jan30Batch/
-  943  ls
-  944  clear
-  945  ls
-  946  clear
-  947  ls
-  948  mkdir qrepo1
-  949  cd qrepo1/
-  950  clear
-  951  git init
-  952  echo "rec1" >> f1.txt
-  953  git add .
-  954  git commit -m "CM1"
-  955  echo "rec1" >> f2.txt
-  956  git add .
-  957  git commit -m "CM2"
-  958  echo "rec1" >> f3.txt
-  959  git add .
-  960  git commit -m "CM3"
-  961  echo "rec1" >> f4.txt
-  962  git add .
-  963  git commit -m "CM4"
-  964  echo "rec1" >> f5.txt
-  965  git add .
-  966  git commit -m "CM5"
-  967  ls
-  968  clear
-  969  git log --oneline
-  970  git show d2ed613
-  971  git revert d2ed613
-  972  git log --oneline
-  973  ls
-  974  git status
-  975  git show ba87ad3
-  976  git log d2ed613
-  977  git show d2ed613
-  978  cd ..
-  979  mkdir qrepo2
-  980  cd qrepo2
-  981  clear
-  982  git init
-  983  echo "rec1" >> f1.txt
-  984  git status
-  985  git add .
-  986  git commit -m "Initial Commit"
-  987  clear
-  988  git branch feature1
-  989  git branch feature2
-  990  git branch
-  991  git switch feature1
-  992  echo "rec1" >> s1.txt
-  993  echo "rec2" >> s1.txt
-  994  echo "rec3" >> s1.txt
-  995  git add .
-  996  clear
-  997  git status
-  998  git switch feature2
-  999  git status
- 1000  git switch feature1
- 1001  clear
- 1002  git status
- 1003  git commit -m "f1cm1"
- 1004  git status
- 1005  git switch feature2
- 1006  git status
- 1007  ls
- 1008  clear
- 1009  echo "rec1" >> w1.txt
- 1010  echo "rec1" >> w1.txt
- 1011  echo "rec1" >> w1.txt
- 1012  echo "rec1" >> w1.txt
- 1013  echo "rec1" >> w1.txt
- 1014  echo "rec1" >> w1.txt
- 1015  echo "rec1" >> w1.txt
- 1016  echo "rec1" >> w1.txt
- 1017  git add .
- 1018  clear
- 1019  git status
- 1020  git stash
- 1021  git status
- 1022  git stash list
- 1023  echo "rec1" >> qq1.txt
- 1024  git add .
- 1025  git status
- 1026  git stash
- 1027  git stash list
- 1028  echo "rec1" >> we1.txt
- 1029  git add .
- 1030  git status
- 1031  git stash save "Stashed we1.txt"
- 1032  git stash list
- 1033  ls
- 1034  echo "rec1" >> wq1.txt
- 1035  echo "rec1" >> wq2.txt
- 1036  echo "rec1" >> wq3.txt
- 1037  git add .
- 1038  git stash save "Stashed 3 wq files"
- 1039  git stash list
- 1040  git stash apply
- 1041  git commit -m "CM1 for wq files"
- 1042  git status
- 1043  git stash list
- 1044  git stash drop
- 1045  git stash list
- 1046  git stash apply stash@{1}
- 1047  clear
- 1048  git status
- 1049  git commit -m " asdfasd"
- 1050  clear
- 1051  git statsu
- 1052  git status
- 1053  echo "rec1" >> r1.txt
- 1054  echo "rec2" >> r1.txt
- 1055  echo "rec3" >> r1.txt
- 1056  echo "rec4" >> r1.txt
- 1057  clear
- 1058  git add .
- 1059  git status
- 1060  git stash branch temp_feature2
- 1061  git status
- 1062  ls
- 1063  git add .
- 1064  git commit -m "feature2 Temp"
- 1065  git branch
- 1066  git switch feature2
- 1067  git status
- 1068  cd ..
- 1069  mkdir qrepo3
- 1070  cd qrepo3
- 1071  clear
- 1072  ls
- 1073  git clone https://github.com/LoksaiETA/jan30-testrepo2.git
- 1074  ls
- 1075  cd jan30-testrepo2/
- 1076  ls
- 1077  git remote -v
- 1078  git switch -c dev-feature1
- 1079  ls
- 1080  echo "rec1" >> file1.txt
- 1081  echo "rec1" >> file1.txt
- 1082  echo "rec1" >> file1.txt
- 1083  echo "rec1" >> file1.txt
- 1084  echo "rec1" >> file1.txt
- 1085  git add .
- 1086  ls -a
- 1087  git commit -m "commit1 from local"
- 1088  git status
- 1089  git push -u origin dev-feature1
- 1090  cd ..
- 1091  cd ..
- 1092  mkdir qrepo4
- 1093  clear
- 1094  cd  qrepo4
- 1095  ls
- 1096  git status
- 1097  clear
- 1098  git init
- 1099  echo "rec" >> q1.txt
- 1100  echo "rec" >> q2.txt
- 1101  echo "rec" >> q3.txt
- 1102  git add .
- 1103  git commit -m "Initial Commit from local"
- 1104  git remote -v
- 1105  git remote add origin https://github.com/LoksaiETA/jan30-dummyrepo1.git
- 1106  git remote -v
- 1107  git branch -M main
- 1108  git push -u origin main
- 1109  ls
- 1110  git remote -v
- 1111  git remote remote origin
- 1112  clear
- 1113  git remote remove origin
- 1114  git remote -v
- 1115  git remote add origin https://github.com/LoksaiETA/jan30-dummyrepo1.git
- 1116  git remote -v
- 1117  git status
- 1118  git fetch
- 1119  ls
- 1120  git ls-files
- 1121  clear
- 1122  git pull
- 1123  clear
- 1124  git pull origin
- 1125  git pull origin main
- 1126  clear
- 1127  ls
- 1128  history
 			
 Jenkins :::::
 
@@ -1673,4 +1481,81 @@ Jenkins :::::
 		Jenkins servers are owned by DevOps Team.
 			Developer are just user.
 			
-	
+########
+DAY-9
+########
+
+		Installation of Jenkins 
+		
+		Config Jenkins Master 
+		
+		Jenkins Administration
+		
+		Config Slave Machine
+		
+		Create Jenkins CICD Pipeline for build & Deployment to QA Server 
+		
+		1 - Jenkins Master 
+		2 - Slave 
+		3 - QA Server 
+		
+	- Installed Jenkins :
+		Config Jenkins.
+		
+		Jenkins Administration
+			
+		Create Jenkins CICD Pipeline for build 
+		
+		Free-Style Project:
+		
+		
+		
+		
+		Variables ::::
+		
+			Environment Variables
+			User Defined Variables
+		
+		
+		job1 --- job1
+		
+		
+		Pipeline Projects!
+		
+			Are defined using groovy scripts!
+			
+			Stages 
+			
+			
+			Pipeline script :::
+			
+			Stages 
+			
+			Stage1 -- SCM Checkout		---> github - Checkout --> Workspace
+			
+			Stage2 -- Build 			---> Compile the source code and create artifacts 
+								Build Tool is required to perform build
+								Maven Build Tool
+			
+			Stage3 -- Deploy 
+			
+			
+			
+			Maven - is build tool --> Compile the source code and create artifacts 
+			
+				- src_code 
+				- pom.xml  === property file for maven -- used to identify the maven dependencies and plugins
+			
+			
+Summary :::
+			
+		Install Jenkins_Master
+		Free-style project 
+			create build steps
+				Varibles
+			Console output 
+		
+		Manage Jenkins 
+			Plugins Mgmt
+			User Mgmt
+		
