@@ -1,0 +1,29 @@
+#Docker Installation | Configuration | Commands & Concepts:
+
+sudo yum install docker
+
+
+yum install docker -y
+docker version
+systemctl status docker
+systemctl start docker
+systemctl status docker
+systemctl enable docker
+
+docker verion
+docker --version
+
+#Basic Docker Commands :
+
+#goto : https://hub.docker.com/
+
+docker run centos
+docker pull centos 
+
+### Run Container in Interactive Mode:
+
+docker run -it centos bash
+cat /etc/*release*
+### Print the Docker Centos Image Release Info.
+dockerpath# cat /etc/*release*
+dockerpath# exit
