@@ -206,12 +206,8 @@ docker images
 
 ## Push to docker registry
 
-docker login --username=loksaieta
-
-dckr_pat_eAGl5q1J5jnRGW1uz194q5qTMIo
-
-
-password: dckr_pat_lu71vhQjN0UYt7wDiSwySTovVy3ikWf8
+docker login --username=loksai
+password: dckr_p
 
 #docker push loksaieta/debian-git2:v1.0
 
