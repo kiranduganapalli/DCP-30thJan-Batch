@@ -2250,4 +2250,83 @@ DAY-15
 		docker run :::
 		
 		Interactive Mode --
+	
+	Docker Container Executions!!!
+	
+		Interactive Mode 
 		
+		Detached Mode 
+		
+		Attached Mode 
+		
+	Tomcat : 8080
+	
+	run we appln. 
+	
+	docker run -it tomcat:8.0 bash
+	
+	
+	Docker Image Creation
+	
+		Docker Build -- 
+		
+		Docker commit 
+		
+	created image :
+	pushed to docker registry!
+	
+	Containers Volume!!!
+	
+	Container -- Appln. web appln. - output 
+	
+	Stateful 
+	Stateless 
+	
+	Docker Compose 
+		run multiple containers 
+		
+	Config file ::
+		container defi...
+			centos
+			tomcat
+			mysql
+	Docker Swarm
+	
+	Container Orchestration Tool :::
+	
+	Kubernetes ::::
+	
+		Open-Source tool to manage containers!
+		
+		ensure high Availability 
+		loadbalancing!
+		
+	Docker Image -- web_appln. -- docker hub 
+	
+	PROD Server :
+	
+		Kubernetes Cluster!
+
+	Kubernetes Architecture
+	
+	
+Kubernetes Master :  -- just to schedule and manage the containers
+	Cluster :
+		Kubernetes WorkerNode1 c1
+		Kubernetes WorkerNode2 c1
+		Kubernetes WorkerNode3 c1
+	
+Terminologies :::
+	Cluster 
+	Container --> POD
+	Images 
+	Namespaces 
+	Deployments
+	Replicas
+	Volumes 
+	
+	
+	
+	
+	
+			
